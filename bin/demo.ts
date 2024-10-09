@@ -5,6 +5,8 @@ import { DemoStack } from '../lib/demo-stack';
 import { MyLambdaCdkStack } from '../lib/my-lambda-cdk-stack';
 import { SqsLambdaStack } from '../lib/sqs-lambda';
 import { ApiGatewayStack } from '../lib/api-gateway';
+import { Ec2InstanceStack } from '../lib/ec2-instance-stack';
+import { CdkEksExampleStack } from '../lib/eks-instace-stack';
 
 const app = new cdk.App();
 new DemoStack(app, 'DemoStack', {
@@ -28,3 +30,5 @@ const lambdaSqs=new MyLambdaCdkStack(app,'LambdaStack',{});
 new SqsLambdaStack(app,'LambdaSqsQueueStack',{});
 
 new ApiGatewayStack(app,'ApiGatewayStack',{});
+new Ec2InstanceStack(app,'Ec2InstanceStack',{});
+new CdkEksExampleStack(app,'EksClusterStack',{})
